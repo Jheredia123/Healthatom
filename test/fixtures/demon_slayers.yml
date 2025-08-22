@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  kanji: MyString
+  kanji_meaning: MyString
+  power: 1
+
+two:
+  name: MyString
+  kanji: MyString
+  kanji_meaning: MyString
+  power: 1

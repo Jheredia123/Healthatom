@@ -1,0 +1,145 @@
+{
+  "cazadores": [
+    {
+      "registro": 545,
+      "significado": "Tasogare no Tsuisekisha Ansatsusha",
+      "nombre": "薄明の掌握鎖呼吸",
+      "kanji": "Asesino Perseguidor Crepuscular",
+      "nivel_de_fuerza": 65
+    },
+    {
+      "registro": 557,
+      "significado": "Tasogare no Seisansha",
+      "nombre": "薄明の鎖花呼吸",
+      "kanji": "Liquidador Crepuscular",
+      "nivel_de_fuerza": 28
+    },
+    {
+      "registro": 488,
+      "significado": "Taiyou Ishi no Nanpou Kimetsu",
+      "nombre": "日長石の掌握花呼吸",
+      "kanji": "Cazador Austral de la Piedra Solar",
+      "nivel_de_fuerza": 36
+    },
+    {
+      "registro": 162,
+      "significado": "Touketu no Shugosha",
+      "nombre": "凍てつく掌握呼吸",
+      "kanji": "Guardián Congelado",
+      "nivel_de_fuerza": 27
+    },
+    {
+      "registro": 405,
+      "significado": "Suna Arashi no Kimetsu",
+      "nombre": "砂嵐の呼吸",
+      "kanji": "Cazador de la Tormenta de Arena",
+      "nivel_de_fuerza": 35
+    },
+    {
+      "registro": 197,
+      "significado": "Kuroougon no Ito Kimetsu",
+      "nombre": "炎黄金の糸呼吸",
+      "kanji": "Cazador del Hilo Dorado Negro",
+      "nivel_de_fuerza": 15
+    },
+    {
+      "registro": 274,
+      "significado": "Undou no Kimetsu",
+      "nombre": "運動の呼吸",
+      "kanji": "Cazador Cinético",
+      "nivel_de_fuerza": 80
+    },
+    {
+      "registro": 165,
+      "significado": "Shippuu no Kimetsu",
+      "nombre": "烈風の呼吸",
+      "kanji": "Cazador de la Fuerza del Vendaval",
+      "nivel_de_fuerza": 24
+    }
+  ],
+  "demonios": [
+    {
+      "registro": 737,
+      "significado": "Gran Desesperación Infernal",
+      "nombre": "Rengoku no Dai Zetsubou",
+      "kanji": "煉獄の大絶望",
+      "nivel_de_fuerza": 57
+    },
+    {
+      "registro": 710,
+      "significado": "Dokuganryu el Silencioso Infernal",
+      "nombre": "Shizukanaru Rengoku no Dokuganryu",
+      "kanji": "静かなる煉獄の独眼竜",
+      "nivel_de_fuerza": 39
+    },
+    {
+      "registro": 304,
+      "significado": "Araña del Infierno Oscura del Infierno",
+      "nombre": "Jigoku yori no Yami no Jigoku-Kumo",
+      "kanji": "地獄よりの闇の地獄蜘蛛",
+      "nivel_de_fuerza": 54
+    },
+    {
+      "registro": 54,
+      "significado": "Dokuganryu Gigante",
+      "nombre": "Kyodai na Dokuganryu",
+      "kanji": "巨大な独眼竜",
+      "nivel_de_fuerza": 54
+    },
+    {
+      "registro": 636,
+      "significado": "Rey Verde Real de las Profundidades",
+      "nombre": "Shin'en yori no Ouke no Ryokuō",
+      "kanji": "深淵よりの王家の緑王",
+      "nivel_de_fuerza": 45
+    },
+    {
+      "registro": 224,
+      "significado": "Estancado",
+      "nombre": "Yodomu",
+      "kanji": "淀む",
+      "nivel_de_fuerza": 16
+    },
+    {
+      "registro": 932,
+      "significado": "Crueldad Infernal",
+      "nombre": "Rengoku no Zankoku",
+      "kanji": "煉獄の残酷",
+      "nivel_de_fuerza": 38
+    }
+  ],
+  "combates": [
+    {
+      "nombre": "Guerra de la Eternidad del Samsara",
+      "demonios": [
+        737
+      ],
+      "cazadores": [
+        162
+      ]
+    },
+    {
+      "nombre": "La Noche de la Lentitud de la Tortuga",
+      "demonios": [
+        710,
+        636
+      ],
+      "cazadores": [
+        545,
+        488,
+        557
+      ]
+    },
+    {
+      "nombre": "Choque de la Noche Eterna",
+      "demonios": [
+        224,
+        54,
+        304
+      ],
+      "cazadores": [
+        405
+      ]
+    }
+  ]
+}

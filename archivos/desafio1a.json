@@ -1,0 +1,141 @@
+{
+  "cazadores": [
+    {
+      "registro": 353,
+      "significado": "Naichingēru Kimetsu",
+      "nombre": "鶯の呼吸",
+      "kanji": "Cazador del Ruiseñor",
+      "nivel_de_fuerza": 32
+    },
+    {
+      "registro": 573,
+      "significado": "Yuukan na Kokoro no Kyuusaisha",
+      "nombre": "勇心柱",
+      "kanji": "Redentor de Corazones Valientes",
+      "nivel_de_fuerza": 22
+    },
+    {
+      "registro": 45,
+      "significado": "Chi no Tsuki no Kaika Kimetsu",
+      "nombre": "血月の花呼吸",
+      "kanji": "Cazador de la Flor de la Luna de Sangre",
+      "nivel_de_fuerza": 61
+    },
+    {
+      "registro": 400,
+      "significado": "Kurokage no Shuugekisha",
+      "nombre": "黒貂影刀",
+      "kanji": "Incursor de la Sombra de Sable",
+      "nivel_de_fuerza": 37
+    },
+    {
+      "registro": 266,
+      "significado": "Hisui no Sasayakisha Seisansha",
+      "nombre": "翡翠の囁き鎖花呼吸",
+      "kanji": "Liquidador Susurrador de Jade",
+      "nivel_de_fuerza": 86
+    },
+    {
+      "registro": 421,
+      "significado": "Kuroshizuka na Kaminari Kimetsu",
+      "nombre": "炎静かな雷の呼吸",
+      "kanji": "Cazador del Trueno Silencioso Negro",
+      "nivel_de_fuerza": 82
+    },
+    {
+      "registro": 265,
+      "significado": "Hisui no Sasayakisha Rengoku Shugosha",
+      "nombre": "翡翠の囁き花鎖掌握呼吸",
+      "kanji": "Guardián Infernal Susurrador de Jade",
+      "nivel_de_fuerza": 36
+    },
+    {
+      "registro": 399,
+      "significado": "Kurozuru no Kyuusaisha",
+      "nombre": "黒貂柱",
+      "kanji": "Redentor de Sable",
+      "nivel_de_fuerza": 65
+    },
+    {
+      "registro": 139,
+      "significado": "Kuroemerarudo no Shuugekisha Kimetsu",
+      "nombre": "炎翡翠の刃呼吸",
+      "kanji": "Cazador Incursor Esmeralda Negro",
+      "nivel_de_fuerza": 85
+    }
+  ],
+  "demonios": [
+    {
+      "registro": 445,
+      "significado": "Ushi-oni Oscuro del Infierno",
+      "nombre": "Jigoku yori no Yami no Ushi-oni",
+      "kanji": "地獄よりの闇の牛鬼",
+      "nivel_de_fuerza": 78
+    },
+    {
+      "registro": 460,
+      "significado": "Estancado Oscuro de la Ruina",
+      "nombre": "Hametsu no Yami no Yodomu",
+      "kanji": "破滅の闇の淀む",
+      "nivel_de_fuerza": 68
+    },
+    {
+      "registro": 712,
+      "significado": "Serpiente Venenosa Infernal",
+      "nombre": "Rengoku no Dokuja",
+      "kanji": "煉獄の毒蛇",
+      "nivel_de_fuerza": 90
+    },
+    {
+      "registro": 631,
+      "significado": "Llama de Dragón Real",
+      "nombre": "Ouke no Ryuuen",
+      "kanji": "王家の龍炎",
+      "nivel_de_fuerza": 26
+    },
+    {
+      "registro": 148,
+      "significado": "Sombra Oscura Obscura",
+      "nombre": "Aimai na Yamikage",
+      "kanji": "曖昧な闇影",
+      "nivel_de_fuerza": 99
+    }
+  ],
+  "combates": [
+    {
+      "nombre": "Batalla de la Sabiduría de Atenea",
+      "demonios": [
+        460
+      ],
+      "cazadores": [
+        400
+      ]
+    },
+    {
+      "nombre": "Revancha de la Pobreza",
+      "demonios": [
+        712,
+        631
+      ],
+      "cazadores": [
+        400,
+        573,
+        421,
+        266
+      ]
+    },
+    {
+      "nombre": "Incursión del Desierto de Sal",
+      "demonios": [
+        445,
+        631,
+        712
+      ],
+      "cazadores": [
+        400,
+        45,
+        353
+      ]
+    }
+  ]
+}

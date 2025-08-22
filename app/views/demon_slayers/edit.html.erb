@@ -1,0 +1,12 @@
+<% content_for :title, "Editing demon slayer" %>
+
+<h1>Editing demon slayer</h1>
+
+<%= render "form", demon_slayer: @demon_slayer %>
+
+<br>
+
+<div>
+  <%= link_to "Show this demon slayer", @demon_slayer %> |
+  <%= link_to "Back to demon slayers", demon_slayers_path %>
+</div>

@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @demon_slayer %>
+
+<div>
+  <%= link_to "Edit this demon slayer", edit_demon_slayer_path(@demon_slayer), class: 'btn' %>
+  <%= link_to "Back to demon slayers", demon_slayers_path, class: 'btn' %>
+  <%= button_to "Destroy this demon slayer", @demon_slayer, method: :delete, form_class: 'single-btn', class: 'btn' %>
+</div>

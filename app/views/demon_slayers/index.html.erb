@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Demon slayers" %>
+
+<h1>Demon slayers</h1>
+
+<div id="demon_slayers">
+    <% @demon_slayers.each do |demon_slayer| %>
+      <div class="demon-slayer__container--index">
+        <div style="margin: 2rem 1rem;">
+          <%= check_box_tag 'c[]', demon_slayer.id, class: '.choose-ds' %>
+        </div>
+        <div style="flex: 0 0 400px; width: 400px">
+          <%= render demon_slayer %>
+        </div>
+        <div style="margin: 2rem 1rem;">
+          <%= link_to "Show this demon slayer", demon_slayer %>
+        </div>
+
+      </div>
+    <% end %>
+    <div>
+      <%= link_to "Export chosen demon slayers",
+                  export_demon_slayers_path(ts: Time.now.to_i),
+                  id: 'btn-export-ds',
+                  class: 'btn',
+                  target: '_blank',
+                  data: {
+                    turbo_prefetch: "false",
+                    blank_url: export_demon_slayers_path(ts: Time.now.to_i)
+                  }
+      %>
+      <%= link_to "New demon slayer", new_demon_slayer_path, class: 'btn' %>
+    </div>
+</div>
+

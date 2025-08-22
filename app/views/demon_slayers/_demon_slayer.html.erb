@@ -1,0 +1,41 @@
+<div id="<%= dom_id demon_slayer %>">
+  <p>
+    <strong>Id:</strong>
+    <%= demon_slayer.id %>
+  </p>
+  <p>
+    <strong>Name:</strong>
+    <%= demon_slayer.name %>
+  </p>
+
+  <p>
+    <strong>Kanji:</strong>
+    <%= demon_slayer.kanji %>
+  </p>
+
+  <p>
+    <strong>Kanji meaning:</strong>
+    <%= demon_slayer.kanji_meaning %>
+  </p>
+
+  <p>
+    <strong>Power:</strong>
+    <span class="power-bar">
+      <span class="power-bar__power" style="width: <%= demon_slayer.power%>%"></span>
+      <span class="power-bar__label-container">
+        <span class="power-bar__label"><%= demon_slayer.power %></span>
+      </span>
+    </span>
+  </p>
+
+  <p>
+    <strong>Registred at:</strong>
+    <%= l_or demon_slayer.created_at, "-" %>
+  </p>
+
+  <p>
+    <strong>Last update:</strong>
+    <%= l_or demon_slayer.updated_at, "-" %>
+  </p>
+
+</div>

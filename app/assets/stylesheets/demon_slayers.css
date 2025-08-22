@@ -1,0 +1,53 @@
+#demon_slayers .demon-slayer__container--index {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Elementos impares con checkbox marcado */
+#demon_slayers .demon-slayer__container--index:has(input[type=checkbox]:checked):nth-child(odd) {
+  background: #e9fff9;
+}
+/* Elementos pares con checkbox marcado */
+#demon_slayers .demon-slayer__container--index:has(input[type=checkbox]:checked):nth-child(even) {
+  background: #d9f0ea; /* Un color similar pero ligeramente más oscuro */
+}
+
+.power-bar {
+  display: inline-block;
+  width: 250px;
+  height: 1.1rem;
+  background: #fff;
+  border: 2px solid #333;
+  position: relative;
+}
+.power-bar__power {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #000;
+  background: repeating-linear-gradient(-65deg, #ff0000, #ffff00 10px, #ffff00 10px, #ffff00 20px);
+}
+.power-bar__label-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.power-bar__label {
+  display: block;
+  padding: 0 0.5rem;
+  flex: 0 1 auto;
+  font-size: 60%;
+  background: rgba(255, 255, 255, 0.8);
+}
+
