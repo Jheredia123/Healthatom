@@ -1,0 +1,38 @@
+Instrucciones:
+Necesito que actúes como un desarrollador web y me ayudes a crear un juego de navegador simple con HTML, CSS y JavaScript.
+Nombre del juego: El juego de cazar al cazador.
+Objetivo: El jugador, que es un demonio, debe "devorar" a todos los cazadores en el mapa.
+
+Requisitos técnicos:
+El código debe estar en un solo archivo HTML que contenga el CSS (<style>) y el JavaScript (<script>) embebidos.
+El juego debe funcionar completamente en el navegador sin necesidad de un servidor o dependencias externas.
+Funcionalidad del juego:
+Menú de inicio: Al cargar la página, debe aparecer un menú para que el usuario elija su demonio. Las opciones de demonio deben ser tres, con los siguientes niveles de poder iniciales:
+Demonio de poder 3
+Demonio de poder 5
+Demonio de poder 9
+
+Mapa del juego: El juego debe ocurrir en un área cuadrada que simule un bosque. Los cazadores y el demonio deben ser representados por elementos gráficos simples (pueden ser cuadrados de colores o íconos).
+
+Personajes:
+El demonio (jugador): Se controla con las teclas de flecha (arriba, abajo, izquierda, derecha).
+Los cazadores (enemigos): Debe haber al menos 5 cazadores distribuidos al azar en el mapa. Cada cazador debe tener un nivel de poder aleatorio entre 1 y 20.
+
+Mecánicas de combate:
+Si el demonio choca con un cazador:
+Si el poder del demonio es mayor que el del cazador, el demonio "devora" al cazador. El cazador desaparece del mapa y el poder del cazador se suma al poder actual del demonio.
+Si el poder del demonio es menor o igual al del cazador, el juego termina.
+
+Condiciones de fin de juego:
+Victoria: El juego termina y el jugador gana si ha "devorado" a todos los cazadores del mapa.
+Derrota: El juego termina y el jugador pierde si se enfrenta a un cazador con un poder igual o superior.
+
+Interfaz de usuario:
+Debe mostrar el poder actual del demonio en todo momento.
+Debe mostrar el número de cazadores restantes.
+Debe haber una pantalla de victoria y otra de derrota al final del juego.
+
+Consideraciones adicionales:
+El código debe estar bien comentado para explicar su funcionamiento.
+Usa HTML semántico y un CSS responsivo para el mapa del juego.
+El JavaScript debe ser claro y estructurado.

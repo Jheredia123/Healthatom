@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    margin: 0;
+    flex-direction: column;
+}
+
+#game-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #34495e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+}
+
+#start-menu {
+    padding: 20px;
+}
+
+h1 {
+    color: #e74c3c;
+}
+
+.demon-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.demon-button:hover {
+    background-color: #c0392b;
+}
+
+#game-board {
+    display: none;     /* Asegura que el tablero de juego esté oculto al inicio */
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: #27ae60;
+    border: 5px solid #2ecc71;
+    margin-top: 20px;
+
+}
+
+#demon, .hunter {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #fff;
+    transition: transform 0.1s linear;
+}
+
+#demon {
+    background-color: #c0392b;
+    z-index: 10;
+}
+
+.hunter {
+    background-color: #3498db;
+    z-index: 5;
+}
+
+.hunter .power {
+    position: absolute;
+    top: -20px;
+    font-size: 0.8em;
+    background-color: #2980b9;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+#stats {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+#end-screen {
+    display: none; /* Asegura que la pantalla de fin de juego esté oculta al inicio */
+    padding: 20px;
+    background-color: #34495e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#end-screen h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.win-message {
+    color: #2ecc71;
+}
+
+.lose-message {
+    color: #e74c3c;
+}

@@ -48,7 +48,14 @@ class DemonSlayersController < ApplicationController
   end
 
   def export
-    @demon_slayers = DemonSlayer.where(id: params[:ids]).presence || DemonSlayer.all
+    # CORRECTED: Checks if ids are present before querying the database.
+    ids = params[:ids]
+    if ids.present?
+      @demon_slayers = DemonSlayer.where(id: ids)
+    else
+      @demon_slayers = DemonSlayer.all
+    end
+
     json_data = @demon_slayers.map do |demon_slayer|
       {
         registro: demon_slayer.id,
@@ -79,11 +86,13 @@ class DemonSlayersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_demon_slayer
-      @demon_slayer = DemonSlayer.find(params.expect(:id))
+      # CORRECTED: Use params[:id] to find the record.
+      @demon_slayer = DemonSlayer.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
     def demon_slayer_params
-      params.expect(demon_slayer: [ :name, :kanji, :kanji_meaning, :power ])
+      # CORRECTED: Use `require` and `permit` for strong parameters.
+      params.require(:demon_slayer).permit(:name, :kanji, :kanji_meaning, :power)
     end
 end

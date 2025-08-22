@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El juego de cazar al cazador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            margin: 0;
+            flex-direction: column;
+        }
+
+        #game-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #34495e;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            max-width: 90%;
+        }
+
+        #start-menu {
+            padding: 20px;
+        }
+
+        h1 {
+            color: #e74c3c;
+        }
+
+        .demon-button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .demon-button:hover {
+            background-color: #c0392b;
+        }
+
+        #game-board {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: #27ae60;
+            border: 5px solid #2ecc71;
+            margin-top: 20px;
+            display: none; /* Se oculta al inicio */
+        }
+
+        #demon, .hunter {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #fff;
+            transition: transform 0.1s linear;
+        }
+
+        #demon {
+            background-color: #c0392b;
+            z-index: 10;
+        }
+
+        .hunter {
+            background-color: #3498db;
+            z-index: 5;
+        }
+
+        .hunter .power {
+            position: absolute;
+            top: -20px;
+            font-size: 0.8em;
+            background-color: #2980b9;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        
+        #stats {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+        
+        #end-screen {
+            display: none;
+            padding: 20px;
+            background-color: #34495e;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        #end-screen h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .win-message {
+            color: #2ecc71;
+        }
+
+        .lose-message {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+<div id="game-container">
+    <div id="start-menu">
+        <h1>El juego de cazar al cazador</h1>
+        <p>Elige tu demonio para comenzar la caza:</p>
+        <button class="demon-button" data-power="3">Poder 3</button>
+        <button class="demon-button" data-power="5">Poder 5</button>
+        <button class="demon-button" data-power="9">Poder 9</button>
+    </div>
+
+    <div id="game-board">
+        <div id="demon"></div>
+    </div>
+
+    <div id="stats">
+        Poder del demonio: <span id="demon-power">0</span> | Cazadores restantes: <span id="hunters-left">0</span>
+    </div>
+
+    <div id="end-screen">
+        <h2 id="end-message"></h2>
+        <button class="demon-button" onclick="location.reload()">Jugar de nuevo</button>
+    </div>
+</div>
+
+<script>
+    const demonPowers = { '3': 3, '5': 5, '9': 9 };
+    const board = document.getElementById('game-board');
+    const demonElement = document.getElementById('demon');
+    const demonPowerSpan = document.getElementById('demon-power');
+    const huntersLeftSpan = document.getElementById('hunters-left');
+    const startMenu = document.getElementById('start-menu');
+    const endScreen = document.getElementById('end-screen');
+    const endMessage = document.getElementById('end-message');
+    
+    let demon = { power: 0, x: 0, y: 0 };
+    let hunters = [];
+    const boardSize = 500;
+    const characterSize = 40;
+    const hunterCount = 5;
+
+    // Función para inicializar el juego
+    function initGame(initialPower) {
+        // Inicializa el estado del juego
+        demon.power = initialPower;
+        demon.x = (boardSize / 2) - (characterSize / 2);
+        demon.y = (boardSize / 2) - (characterSize / 2);
+        demonElement.style.left = demon.x + 'px';
+        demonElement.style.top = demon.y + 'px';
+        demonElement.textContent = initialPower;
+
+        hunters = [];
+        board.innerHTML = '';
+        board.appendChild(demonElement);
+
+        // Crea a los cazadores y los distribuye aleatoriamente
+        for (let i = 0; i < hunterCount; i++) {
+            const hunter = createHunter();
+            hunters.push(hunter);
+            board.appendChild(hunter.element);
+        }
+
+        updateStats();
+        startMenu.style.display = 'none';
+        board.style.display = 'block';
+    }
+
+    // Función para crear un cazador
+    function createHunter() {
+        const hunterElement = document.createElement('div');
+        hunterElement.classList.add('hunter');
+
+        const power = Math.floor(Math.random() * 20) + 1; // Poder aleatorio entre 1 y 20
+        const x = Math.random() * (boardSize - characterSize);
+        const y = Math.random() * (boardSize - characterSize);
+
+        hunterElement.style.left = x + 'px';
+        hunterElement.style.top = y + 'px';
+        hunterElement.innerHTML = `<span class="power">${power}</span>`;
+
+        return { element: hunterElement, power, x, y };
+    }
+
+    // Función para actualizar las estadísticas en pantalla
+    function updateStats() {
+        demonPowerSpan.textContent = demon.power;
+        huntersLeftSpan.textContent = hunters.length;
+    }
+
+    // Maneja la lógica de movimiento y colisiones
+    document.addEventListener('keydown', (e) => {
+        if (board.style.display === 'none') return; // No se mueve si el juego no ha comenzado
+
+        const step = 20;
+        let newX = demon.x;
+        let newY = demon.y;
+
+        switch (e.key) {
+            case 'ArrowUp':
+                newY -= step;
+                break;
+            case 'ArrowDown':
+                newY += step;
+                break;
+            case 'ArrowLeft':
+                newX -= step;
+                break;
+            case 'ArrowRight':
+                newX += step;
+                break;
+        }
+
+        // Limita el movimiento dentro del tablero
+        newX = Math.max(0, Math.min(newX, boardSize - characterSize));
+        newY = Math.max(0, Math.min(newY, boardSize - characterSize));
+
+        demon.x = newX;
+        demon.y = newY;
+        demonElement.style.left = demon.x + 'px';
+        demonElement.style.top = demon.y + 'px';
+
+        checkCollisions();
+    });
+
+    // Revisa las colisiones con los cazadores
+    function checkCollisions() {
+        hunters = hunters.filter(hunter => {
+            if (isColliding(demon, hunter)) {
+                if (demon.power > hunter.power) {
+                    // El demonio devora al cazador
+                    demon.power += hunter.power;
+                    hunter.element.remove();
+                    updateStats();
+
+                    if (hunters.length === 1) { // 1 porque aún no se ha filtrado
+                        endGame(true);
+                    }
+                    return false; // El cazador es removido de la lista
+                } else {
+                    // El demonio pierde
+                    endGame(false);
+                    return true;
+                }
+            }
+            return true; // El cazador permanece en la lista
+        });
+    }
+
+    // Función para detectar colisiones entre dos elementos
+    function isColliding(demon, hunter) {
+        const demonRect = demonElement.getBoundingClientRect();
+        const hunterRect = hunter.element.getBoundingClientRect();
+
+        return !(demonRect.right < hunterRect.left || 
+                 demonRect.left > hunterRect.right || 
+                 demonRect.bottom < hunterRect.top || 
+                 demonRect.top > hunterRect.bottom);
+    }
+
+    // Muestra la pantalla de fin de juego
+    function endGame(isWin) {
+        board.style.display = 'none';
+        endScreen.style.display = 'block';
+        if (isWin) {
+            endMessage.textContent = '¡Victoria! Has devorado a todos los cazadores.';
+            endMessage.classList.add('win-message');
+        } else {
+            endMessage.textContent = '¡Derrota! El cazador era demasiado poderoso.';
+            endMessage.classList.add('lose-message');
+        }
+    }
+
+    // Eventos de los botones del menú de inicio
+    document.querySelectorAll('.demon-button').forEach(button => {
+        button.addEventListener('click', (e) => {
+            const initialPower = parseInt(e.target.dataset.power);
+            initGame(initialPower);
+        });
+    });
+</script>
+
+</body>
+</html>

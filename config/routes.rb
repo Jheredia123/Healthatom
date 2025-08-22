@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   get "/demon_slayers", to: "demon_slayers#index", as: 'demon_slayers'
-  get '/demon_slayers', to: "demon_slayers#export", as: 'export_demon_slayers'
+  #get '/demon_slayers', to: "demon_slayers#export", as: 'export_demon_slayers'
+  post "/demon_slayers/export", to: "demon_slayers#export", as: 'export_demon_slayers'
   post "/demon_slayers", to: "demon_slayers#create"
   get "/demon_slayers/new", to: "demon_slayers#new", as: 'new_demon_slayer'
   get "/demon_slayers/:id/edit", to: "demon_slayers#edit", as: 'edit_demon_slayer'
@@ -24,4 +25,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # Ruta parta el ejercio2
+  get "juego_cazadores", to: "juegos#juego_cazadores"
+
+ 
 end
